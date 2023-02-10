@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Louie Cervantes - Resume</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" type="text/css"/> 
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" type="text/css"/>
+		<script type="text/javascript" src="get_apis.js" defer></script>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="sidebar">
+				<div id="image">
+					<img id="profile-photo" src="profile_picture.jpg" alt="Profile-Image">
+				</div>
+				<p id="name">Louie Cervantes<br></p>
+				<div id="sidepanel-section-title">Reach me here<br>
+					<a href="#" class="cryptedmail"
+						data-name="Cervantes"
+						data-surname="Louie13"
+						data-domain="gmail"
+						data-tld="com"
+						onclick="window.location.href = 'mailto:' + this.dataset.name + '.' + this.dataset.surname + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">
+					</a>
+				</div>
+				<div id="sidepanel-section-title">
+					<a href="https://www.linkedin.com/in/louie-cervantes-a8914612a/" class="link" target="_blank">
+						<img id="social-thumbnail" src="linkedin.png" alt="LinkedIn">
+					</a>
+					&nbsp;
+					<a href="https://github.com/Louie-Cerv/cloud_resume" class="link" target="_blank">
+						<img id="social-thumbnail" src="github.png" alt="GitHub">
+					</a>
+				</div>
+				<p>DevOps | AWS | Azure | Kubernetes | Linux<br><span id="description">- 5 years of experience with linux/unix systems <br>- 5 years administrating cloud services <br>- I like new challenges and playing with tech at work and in spare time  <br>- I host a few services and domains for myself and others</span></p>
+				<hr width="100%">
+				<div id="skills">
+					<p style="display:inline;">Skills</p><br>
+					<p id="skill-stronger">Powershell</p>
+					<p id="skill">Azure</p>
+					<p id="skill-stronger">Windows Server</p>
+					<p id="skill-stronger">AWS</p>
+					<p id="skill">Grafana</p>
+					<p id="skill-stronger">Nagios</p>
+					<p id="skill-stronger">Terraform</p>
+					<p id="skill">Docker</p>
+					<p id="skill-stronger">git</p>
+					<p id="skill-stronger">Splunk</p>
+					<p id="skill">pfSense</p>					
+					<p id="skill">Proxmox</p>
+				</div>
+				<hr width="100%">
+				<div id="sidepanel-section-title">Certifications<br>
+					<a href="https://www.credly.com/earner/earned/badge/cf03b4e1-d39f-4c70-b3f6-8f6f0daf3f61" class="link" target="_blank">
+						<img id="cert-thumbnail" src="AWS-CloudPractitioner.png" alt="AWS Certified Cloud Practitioner">
+					</a>
+				</div>
+				<hr width="100%">
+			</div>
+			<div id="info-pages">
+				<div class="page">
+					<p>&nbsp;&nbsp;&nbsp;Work experience</p>
+					<ul>
+						<p class="tag">Stamps.com/Auctane<br><span>Cloud Administrator | <span>2020-now</span></span></p>
+						<ul>
+							<li>Here I was part of the team building services in Azure from ground up. I made sure best practices were followed, managed deployments and infrastructure with gitops practices and Jenkins pipelines</li>
+							<li>Involved in setting up and managing APIM, Application gateway, Function apps, event hubs, Key vaults, AKS, monitoring & alerting, networking, storage accounts</li>
+							<li>Occasionally also supporting a dev team with AWS services</li>
+							<br>
+						</ul>
+						<p class="tag">Stamps.com<br><span>Associate Cloud Administrator | <span>2020-2021</span></span></p>
+						<ul>
+							<li>Here I helped the client establish DevOps practices such as IaC, CI/CD, participated in designing</li>
+							<li>Migration to containerized services</li>
+							<br>
+						</ul>
+						<p class="tag">Stamps.com<br><span>Technical Support Representative | <span>2018-2019</span></span></p>
+						<ul>
+							<li>Everything from moving around fridges and TVs to collecting trash... yup, those were my beginnings</li>
+						</ul>
+						<p class="tag">Molina HealthCare<br><span>Associate Helpdesk Technician Intern | <span>2017</span></span></p>
+						<ul>
+							<li>Everything from moving around fridges and TVs to collecting trash... yup, those were my beginnings</li>
+						</ul>
+					</ul>
+				</div>
+				<div class="page">
+					<p>&nbsp;&nbsp;&nbsp;Other projects</p>
+					<div style="float: right">Current temperature is <a id="temp"></a>&#8451;&nbsp;&nbsp;&nbsp;</div>
+					<ul>
+						<p class="tag">Homelab<br><span>playing with stuff | <span>2019-now</span></span></p>
+						<ul>
+							<ul>2021 - pfSense router</ul>
+							<li>Home network split into several physical networks for different purposes</li>
+							<li>VLANs will be added later with networking hardware upgrade</li>
+							<ul>2020 - Proxmox hypervisor</ul>
+							<li>Self-managed NAS</li>
+							<li>In-house DNS server</li>
+							<li>TLS proxy for multiple domains hosted on and off this server, including this resume</li>
+							<li>Monitored with Prometheus&amp;Grafana</li>
+							<li>Several VMs with room to play with stuff</li>
+							<br>
+						</ul>
+						<p class="tag">This resume<br><span>inspired by <a href="https://cloudresumechallenge.dev" target="_blank" class="link">cloudresumechallenge.dev</a> | <span>2022</span></span></p>
+						<ul>
+							<li>Hosted on AWS S3</li>
+							<li>Code versioned on <a href="https://github.com/thrubovc/cloud_resume" target="_blank" class="link">my github</a></li>
+							<li>Automatic deployment by AWS CodePipeline</li>
+							<li>Javascript visitor counter</li>
+							<li>API Gateway, Lambda and DynamoDB setup for the visitor counter</li>
+							<li>Cloudflare for caching and DNS challenge</li>
+							<br>
+						</ul>
+					</ul>
+				</div>
+				<p class="counter">This page has been visited <a id="count"></a> times.</p>
+			</div>
+		</div>
+	</body>
+</html>

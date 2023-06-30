@@ -21,3 +21,6 @@ jobs:
     env:
       AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
       AWS_REGION: 'us-west-1'
+
+    permissions:
+      id-token: write   # This is required for requesting the JWT

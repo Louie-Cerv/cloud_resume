@@ -19,6 +19,7 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::820137170977:role/iam_role_for_Github_Actions
         role-session-name: GithubActionSession
+        aws-region: us-west-1
     - uses: actions/checkout@master
     - uses: jakejarvis/s3-sync-action@master
       with:

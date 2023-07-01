@@ -22,4 +22,4 @@ jobs:
           aws-region: us-west-1
       - name: Copy files to the test website with the AWS CLI
         run: |
-          aws s3 sync . ${{ secrets.AWS_S3_BUCKET }}   
+          aws s3 sync . s3://resume.louiecervantes.com/

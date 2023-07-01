@@ -9,21 +9,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    env:
-      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-      AWS_REGION: 'us-west-1'
-
-    steps:
-    - name: configure aws credentials
-      uses: aws-actions/configure-aws-credentials@v2
-      with:
-        role-to-assume: arn:aws:iam::820137170977:role/iam_role_for_Github_Actions
-        role-session-name: GithubActionSession
-        aws-region: us-west-1
-    - uses: actions/checkout@master
-    - uses: jakejarvis/s3-sync-action@master
-      with:
-        args: --acl public-read --follow-symlinks --delete
-
     permissions:
       id-token: write   # This is required for requesting the JWT
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::820137170977:role/iam_role_for_Github_Actions
+          role-session-name: GithubActionSession
+          aws-region: us-west-1
+      - name: Copy files to the test website with the AWS CLI
+        run: |
+          aws s3 sync . ${{ secrets.AWS_S3_BUCKET }}   

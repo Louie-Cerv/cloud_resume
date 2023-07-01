@@ -23,3 +23,10 @@ jobs:
       - name: Copy files to the test website with the AWS CLI
         run: |
           aws s3 sync . s3://resume.louiecervantes.com/
+
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
+          PATHS: "/index.html"
+          AWS_REGION: "us-west-1"

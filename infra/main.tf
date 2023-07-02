@@ -54,12 +54,14 @@ resource "aws_iam_policy" "iam_policy_for_resume_project" {
         ]
         Resource : "arn:aws:dynamodb:*:*:table/cloudresume"
       },
-            {
+      {
         Action = [
-          "cloudfront:CreateInvalidation"
+          "cloudfront:CreateInvalidation",
+          "cloudfront:GetInvalidation",
+          "cloudfront:ListInvalidations"
         ]
         Effect   = "Allow"
-        Resource = "arn:aws:cloudfront:*:*:*"
+        Resource = "*"
       },
     ]
   })

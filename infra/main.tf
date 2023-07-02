@@ -56,7 +56,7 @@ resource "aws_iam_policy" "iam_policy_for_resume_project" {
       },
             {
         Action = [
-          "*"
+          "cloudfront:CreateInvalidation"
         ]
         Effect   = "Allow"
         Resource = "arn:aws:cloudfront:*:*:*"

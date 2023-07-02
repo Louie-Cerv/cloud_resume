@@ -19,7 +19,6 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::820137170977:role/iam_role_for_Github_Actions
           role-session-name: GithubActionSession
-          aws-region: us-west-1
       - name: Copy files to the test website with the AWS CLI
         run: |
           aws s3 sync . s3://resume.louiecervantes.com/
@@ -29,4 +28,3 @@ jobs:
         env:
           DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
           PATHS: "/index.html"
-          AWS_REGION: "us-west-1"

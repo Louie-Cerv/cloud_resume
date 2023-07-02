@@ -53,7 +53,14 @@ resource "aws_iam_policy" "iam_policy_for_resume_project" {
           "dynamodb:PutItem"
         ]
         Resource : "arn:aws:dynamodb:*:*:table/cloudresume"
-      }
+      },
+            {
+        Action = [
+          "*"
+        ]
+        Effect   = "Allow"
+        Resource = "arn:aws:cloudfront:*:*:*"
+      },
     ]
   })
 }

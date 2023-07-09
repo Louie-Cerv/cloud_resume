@@ -28,4 +28,4 @@ jobs:
         uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
-          PATHS: "/resume.louiecervantes.com/index.html"
+          PATHS: "/*"

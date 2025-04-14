@@ -191,14 +191,20 @@ ul > li {
 
 #darkModeToggle {
     position: fixed;
-    top: 10px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    z-index: 9999; /* Ensure it stays on top of other content */
-    background-color: transparent;
+    top: 1em;
+    right: 1em;
+    background: var(--card-bg);
+    color: var(--text-color);
     border: none;
-    font-size: 24px; /* Adjust to your desired size */
+    padding: 0.5em 0.8em;
+    border-radius: 8px;
+    font-size: 1.2em;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background 0.3s, color 0.3s;
+    z-index: 1000; /* Add this line */
   }
+  
   
 
 #darkModeToggle:hover {

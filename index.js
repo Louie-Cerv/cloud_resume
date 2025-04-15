@@ -2,32 +2,46 @@ const counter = document.getElementById('count');
 async function UpdateVisitCount() {
     let response = await fetch("https://kzbrv7w7a4tbwqo4lpwywo6spa0ymrki.lambda-url.us-west-1.on.aws/");
     let data = await response.json();
-    counter.innerHTML = data;
+    if (counter) {
+        counter.innerHTML = data;
+    }
 }
 
 UpdateVisitCount();
 
-const toggleBtn = document.getElementById('darkModeToggle');
-const currentTheme = localStorage.getItem('theme');
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('darkModeToggle');
 
-// Check if theme is saved in localStorage
-if (currentTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    toggleBtn.textContent = '🌙';  // Change the icon to "dark" mode indicator
-} else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    toggleBtn.textContent = '🌓';  // Set it to "light" mode icon
-}
-
-toggleBtn.addEventListener('click', () => {
-    let theme = document.documentElement.getAttribute('data-theme');
-    if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        toggleBtn.textContent = '🌓';  // Switch back to "light" mode icon
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        toggleBtn.textContent = '🌙';  // Switch to "dark" mode icon
+    if (!toggleBtn) {
+        console.error("Dark mode toggle button not found!");
+        return;
     }
+
+    const updateTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (theme === 'dark') {
+            toggleBtn.textContent = 'LIGHT';
+            toggleBtn.setAttribute('aria-label', 'Enable light mode');
+            toggleBtn.setAttribute('aria-pressed', 'true');
+        } else {
+            toggleBtn.textContent = 'DARK';
+            toggleBtn.setAttribute('aria-label', 'Enable dark mode');
+            toggleBtn.setAttribute('aria-pressed', 'false');
+        }
+    };
+
+    // Initial theme setup (moved to inline script for faster visual update)
+    // const currentTheme = localStorage.getItem('theme');
+    // if (currentTheme === 'dark') {
+    //     updateTheme('dark');
+    // } else {
+    //     updateTheme('light');
+    // }
+
+    toggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        updateTheme(newTheme);
+    });
 });

@@ -171,50 +171,15 @@ ul > li {
     margin-top: 2em;
 }
 
-.theme-toggle {
-    position: fixed;
-    top: 1em;
-    right: 1em;
-    background: var(--card-bg);
-    color: var(--text-color);
-    border: none;
-    padding: 0.5em 0.8em;
-    border-radius: 8px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-}
-
-.theme-toggle:hover {
-    background: var(--skill-hover);
-}
-
 #darkModeToggle {
     position: fixed;
-    top: 1em;
-    right: 1em;
-    background: var(--card-bg);
-    color: var(--text-color);
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
     border: none;
-    padding: 0.5em 0.8em;
-    border-radius: 8px;
-    font-size: 1.2em;
+    border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: background 0.3s, color 0.3s;
-    z-index: 1000; /* Add this line */
-  }
-  
-  
-
-#darkModeToggle:hover {
-    color: #0077cc;
-}
-
-[data-theme="dark"] #darkModeToggle {
-    color: #f5f5f5;
-}
-
-[data-theme="light"] #darkModeToggle {
-    color: #333;
+    z-index: 1000;
 }
